@@ -11,11 +11,12 @@ body {
     margin: auto;    
     padding-left: 5%;
     padding-right: 5%;     
-    padding-bottom: 10px;
-    
+    padding-bottom: 10px;    
 }
-.top-container{
-    border-radius: 10px;   
+.top-container{   
+    border-radius: 10px; 
+    border-top-left-radius: 0px;  
+    border-top-right-radius: 0px; 
     background-color: #f89cab;
 }
 .navbar{
@@ -23,21 +24,26 @@ body {
     border-top-right-radius: 10px; 
     height: 70px;
     background-color: #f9ece6 ;  
-    display: flex;
-    justify-content: center;
-    align-items: center;     
+    display: flex; 
+    justify-content: center;  
 }
-.navbar img{
-   height: 30px; 
-   padding-right: 10px;  
+.navbar ul{  
+    margin: auto;
 }
-
 li{
     display:inline-block;
     padding: 10px 15px;
     border-radius: 5px;    
     list-style-type: none;
+    margin: auto;
 }
+.navbar img{
+   height: 25px;  
+   padding: 0px;
+   margin: 0px;
+}
+
+
 li:hover{
     background-color: #ffffff;
 }
@@ -189,6 +195,7 @@ button{
 .contact-container .col-2{
     padding: 0px;
 }
+
 #send-btn{
     width: 150px;
     border-radius: 0px;
@@ -308,19 +315,20 @@ form input, textarea {
    padding: 0px ;
    margin: 0px;
 }
-.menu-icon {
-    width: 28px;
-    margin-left: 20px;
+.menu-icon {   
     display: none;
+  }
+  #menuItems{
+      display: block;
   }
 
   /* account-page css */
     
 .account-page {
-  width: 90%;
+  width: 100%;
   margin: 0px auto;
   padding: 20px 0;
-  background: #da4f66
+  background: #f89cab
 }
 .form-container {
   background: #fff;
@@ -379,7 +387,7 @@ form a {
 #Indicator {
   width: 100px;
   border: none;
-  background: #ff523b;
+  background: #f89cab;
   height: 3px;
   margin-top: 8px;
   transform: translateX(100px);
@@ -387,19 +395,33 @@ form a {
 }
 
 
-
-
 /* Media-query for screen size less than */
 
-@media all and (max-width:600px){
-    .navbar ul{
-        overflow: hidden;
-        flex-direction: flex-end;
+@media all and (max-width:600px){    
+    .navbar{
+        position: relative;       
+        height: max-content;       
+    }
+    .navbar .menu-icon{
+        display: block;
+        width: 30px;
+        margin: 10px 15px;
+        margin-bottom: 15px;
+        position: absolute;
+        right: 20px;
+    }
+    #menuItems{
+        display: none;
+    }
+    .navbar ul{        
+        margin-left: 10px;
     }
     .navbar li{
-        flex-basis: 100%;
+        display: block;
     }
-
+    .navbar div{
+        display: block;
+    }  
 
     .row {
         text-align: left;
@@ -409,6 +431,7 @@ form a {
       .col-4 {
         flex-basis: 100%;
       }
+     
       .top-container .col-2 img{
         padding: 0px;
         max-width: 100%;

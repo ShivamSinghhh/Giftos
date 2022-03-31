@@ -19,10 +19,10 @@
   <div class="container">
     <h2 style="text-align: center">GIFTOS</h2>
 
-    <div class="top-container">
+    
       <nav></nav>
       <!-- importing nabar from navbar page -->
-
+      <div class="top-container">
       <div class="row">
         <div class="col-2">
           <h1>Welcome To Our Gift Shop</h1>
@@ -35,7 +35,7 @@
           <button>CONTACT US</button>
         </div>
         <div class="col-2">
-          <div><img src="./images/slider-img.png" alt="slieder-img" /></div>
+          <div><img src="./images/slider-img.png" alt="slider-img" /></div>
         </div>
       </div>
     </div>
@@ -247,7 +247,7 @@
 
 
     <!-- //-----------Testinomials-----------------// -->
-    <h2 class="title">TESTIMONIAL</h2>
+    <h2 class="title">TESTINOMIAL</h2>
     <div class="testinomial-container">
       <div class="back">
         <p id="prev">&#60;</p>
@@ -276,22 +276,15 @@
   </div>
 
 
-  <script>
-    function menuToggle() {
-      if (MenuItems.style.maxHeight === "0px") {
-        MenuItems.style.maxHeight = "200px";
-      } else {
-        MenuItems.style.maxHeight = "0px";
-      }
-    }
-
-  </script>
-
+  
   <script type="module">
 
 
     import { navbar, menuToggle } from "./navbar.js";
     document.querySelector("nav").innerHTML = navbar();
+
+    let list = document.querySelectorAll("li");
+    list[0].className = "active";
 
 
     import { footer } from "./footer.js";

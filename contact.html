@@ -35,12 +35,12 @@
       </div>
       <div class="right">
         <form id="contact-form" action="">
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="Phone">
+          <input id="userName" type="text" placeholder="Name">
+          <input id="userEmail" type="email" placeholder="Email">
+          <input id="userPhone" type="text" placeholder="Phone">
 
-          <textarea name="Message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-          <button id="contact-submit-btn" type="submit" id="send-btn">Send</button>
+          <textarea name="Message" id="userMessage" cols="30" rows="10" placeholder="Message"></textarea>
+          <button type="submit" id="send-btn">Send</button>
         </form>
 
       </div>
@@ -61,18 +61,60 @@
 
 </html>
 
-<script>
-  let contact_form = document.getElementById("contact-form");
-  let btn = document.getElementById("contact-submit-btn");
-  btn.addEventListener("click", "submitQuery")
-
-
-</script>
-
 <script type="module">
 
-  import { navbar } from "./navbar.js";
+  import { navbar,menuToggle } from "./navbar.js";
   document.querySelector("nav").innerHTML = navbar();
   import { footer } from "./footer.js";
   document.querySelector("footer").innerHTML = footer();
+
+  let list = document.querySelectorAll("li");
+  list[4].className = "active";
+
+  document.getElementById("menutoggle").addEventListener("click", menuToggle)
+  
 </script>
+
+<script>
+
+ 
+  
+  let contact_form = document.getElementById("contact-form");
+  let btn = document.getElementById("send-btn");
+  btn.addEventListener("click",submitQuery)
+
+  function submitQuery(event){
+     event.preventDefault();
+     let name = contact_form.userName.value;
+     let email = contact_form.userEmail.value;
+     let phone = contact_form.userPhone.value;
+     let mess = contact_form.userMessage.value;
+
+     let data = {
+       name,
+       email,
+       phone,
+       mess,
+     }
+
+     let userMessage = JSON.parse(localStorage.getItem("userMessage")) || [] ;
+
+     userMessage.push(data)
+
+     localStorage.setItem("userMessage",JSON.stringify(userMessage))
+
+     console.log("Name :",name)
+     console.log("Email :",email)
+     console.log("Phone :",phone)
+     console.log("Message :",mess)
+
+    contact_form.userName.value = ""
+     contact_form.userEmail.value = ""
+     contact_form.userPhone.value = ""
+    contact_form.userMessage.value = ""
+
+  }
+
+
+</script>
+

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedStore | Ecommerce Website Design</title>
+    <title>GIFTOS</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,11 @@
 <body>
 
     <div class="container">
+        <h2 style="text-align: center">GIFTOS</h2>
+        <div class="top-container">
         <nav></nav>
-        <!-- importing navbar -->
-    </div>
-
+         <!-- importing navbar -->
+        </div>
 
     <!-- -----------account page------------ -->
 
@@ -29,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="images/image1.png" alt="" width="100%">
+                    <img src="images/slider-img.png" alt="slider-img" width="50%">
                 </div>
                 <div class="col-2">
                     <div class="form-container">
@@ -62,13 +63,13 @@
    
     <footer></footer>
  <!-- -----importing footer------------>
-
+</div>
 
 </body>
 
 </html>
 
-<script type="module">
+<script type="module">  
 
     import { createUser } from "./signUp.js";
     let btn1 = document.getElementById("btn1");
@@ -82,6 +83,9 @@
 
     import { navbar, menuToggle } from "./navbar.js";
     document.querySelector("nav").innerHTML = navbar();
+
+    let list = document.querySelectorAll("li");
+    list[5].className = "active";
   
 
 
