@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIFTOS/Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <h2 style="text-align: center">GIFTOS</h2>
+
+    <div class="top-container">
+
+      <nav></nav>
+      <!-- importing navbar  -->
+    </div>
+
+
+
+    <!-- //--------Contact Us-----------------// -->
+    <h2 class="title left">CONTACT US</h2>
+    <div class="contact-container">
+      <div class="left">
+        <img src="./images/google.JPG" alt="gift img" />
+      </div>
+      <div class="right">
+        <form id="contact-form" action="">
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Phone">
+
+          <textarea name="Message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+          <button id="contact-submit-btn" type="submit" id="send-btn">Send</button>
+        </form>
+
+      </div>
+
+    </div>
+
+    <!-- //--------Contact Us finished-----------------// -->
+
+
+
+    <footer></footer>
+    <!-- importing footer -->
+
+
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  let contact_form = document.getElementById("contact-form");
+  let btn = document.getElementById("contact-submit-btn");
+  btn.addEventListener("click", "submitQuery")
+
+
+</script>
+
+<script type="module">
+
+  import { navbar } from "./navbar.js";
+  document.querySelector("nav").innerHTML = navbar();
+  import { footer } from "./footer.js";
+  document.querySelector("footer").innerHTML = footer();
+</script>
